@@ -36,11 +36,18 @@ sitio real. Son decisión del usuario, no tareas pendientes.
 
 ## El sistema de marca
 
-`Son-risas/README.md` documenta la regla que gobierna la página —*la recta es
-la norma, la curva es la excepción*— los cuatro puntos donde algo se curva y
-los cuatro tiempos del copy. **Leerlo antes de tocar el CSS del guion o de
-escribir copy nuevo.** Son reglas con motivo, no preferencias de estilo; al
-cambiarlas hay que actualizar el README en el mismo commit.
+`Son-risas/README.md` documenta la regla con la que se hizo la página —*la
+recta es la norma, la curva es la excepción*— los cuatro puntos donde algo se
+curva y los cuatro tiempos del copy. Leerlo antes de tocar el CSS del guion o
+de escribir copy nuevo: describe lo que hay hoy y por qué.
+
+**En este proyecto, el skill `frontend-design` tiene prioridad sobre esas
+reglas.** Cuando su criterio y el README no coincidan, manda el skill: el
+README pasa de ser una restricción a ser el punto de partida del que se puede
+salir. Esta prioridad es solo de aquí — vive en este archivo, no en el skill.
+
+Lo que no cambia: al alterar una regla de marca hay que actualizar el README en
+el mismo commit, para que siga describiendo la página que de verdad existe.
 
 ## Previsualizar y desplegar
 
