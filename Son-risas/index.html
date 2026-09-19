@@ -22,9 +22,9 @@
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Son-risas">
 <meta property="og:title" content="Son-risas · Clínica dental en Del Valle, CDMX">
-<meta property="og:description" content="Valoración y plan de tratamiento por escrito sin costo. Agenda tu cita por WhatsApp.">
+<meta property="og:description" content="Valoración y plan de tratamiento por escrito sin costo. La primera vez que abres la boca aquí, es para hablar.">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F5F51'/><rect x='8' y='14.5' width='16' height='3' rx='1.5' fill='%23fff'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F5F51'/><path d='M9 13.5q7 7 14 0' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,6 +49,9 @@
     --accent-soft:#D9E8E3;
     --accent-ink:#FFFFFF;
     --shadow:0 1px 2px rgba(20,32,29,.05), 0 12px 32px -18px rgba(20,32,29,.28);
+
+    /* el radio que convierte una recta en sonrisa; se reutiliza en toda la pagina */
+    --arco:0 0 50% 50% / 0 0 100% 100%;
 
     --display:"Instrument Serif", Georgia, "Times New Roman", serif;
     --body:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
@@ -102,13 +105,20 @@
 
   .wrap{width:min(1120px,100%); margin-inline:auto; padding-inline:clamp(20px,5vw,40px)}
 
-  /* ---------- el guion: motivo de marca ---------- */
+  /* ---------- el guion: motivo de marca ----------
+     La recta es la norma. La curva es la excepcion y solo aparece donde algo
+     se abre: el wordmark al tocarlo, una pregunta al desplegarse, el ultimo
+     paso, el cierre. Si todo se curvara dejaria de significar nada.
+     El trazo vive en el borde inferior de una caja de altura fija, asi que
+     solo se anima el radio y nada empuja al texto de al lado. */
   .dash{
     display:inline-block;
-    width:1.1em; height:.14em;
-    background:var(--accent);
+    width:1.1em; height:.34em;
+    border-bottom:.14em solid var(--accent);
+    border-radius:0;
     vertical-align:.24em;
     margin-inline:.14em;
+    transition:border-radius .3s cubic-bezier(.3,.7,.3,1);
   }
   .eyebrow{
     display:flex; align-items:center; gap:.7rem;
@@ -153,7 +163,9 @@
     font-family:var(--display); font-size:1.6rem; letter-spacing:-.01em;
     text-decoration:none; margin-right:auto; white-space:nowrap;
   }
-  .wordmark .dash, .foot-mark .dash{width:.5em; height:.1em; vertical-align:.3em; margin-inline:.1em}
+  .wordmark .dash, .foot-mark .dash{width:.5em; height:.16em; border-bottom-width:.1em; vertical-align:.3em; margin-inline:.1em}
+  /* la marca se abre cuando la tocas. no se anuncia en ninguna parte. */
+  .wordmark:hover .dash, .wordmark:focus-visible .dash{border-radius:var(--arco)}
   .top nav{display:flex; gap:1.6rem; font-size:.92rem}
   .top nav a{color:var(--ink-2); text-decoration:none}
   .top nav a:hover{color:var(--ink)}
@@ -266,9 +278,30 @@
     font-weight:600; font-size:1.02rem;
   }
   summary::-webkit-details-marker{display:none}
-  summary::after{content:""; width:12px; height:2px; background:var(--accent); flex:none; transition:transform .18s ease}
-  details[open] summary::after{transform:rotate(90deg)}
+  summary::after{
+    content:""; width:14px; height:5px; flex:none;
+    position:relative; top:-2px;
+    border-bottom:2px solid var(--accent); border-radius:0;
+    transition:border-radius .28s cubic-bezier(.3,.7,.3,1);
+  }
+  /* abrir una pregunta es abrir la boca */
+  details[open] summary::after{border-radius:var(--arco)}
   details p{margin:0 0 1.15rem; color:var(--ink-2); font-size:.96rem; max-width:58ch}
+
+  /* cierre: una sola frase y todo el aire posible */
+  .cierre-wrap{background:var(--surface-2); border-top:1px solid var(--line)}
+  .cierre{text-align:center; padding-block:clamp(4rem,9vw,6.5rem)}
+  .cierre .arco{
+    width:min(240px,42vw); height:30px; margin:0 auto clamp(1.75rem,3.5vw,2.5rem);
+    border-bottom:3px solid var(--accent);
+    border-radius:var(--arco);
+  }
+  .cierre p{
+    font-family:var(--display); font-weight:400;
+    font-size:clamp(1.75rem,4.2vw,2.9rem); line-height:1.14; letter-spacing:-.015em;
+    margin:0 auto; max-width:20ch; text-wrap:balance;
+  }
+  .cierre .btn{margin-top:clamp(1.75rem,3.5vw,2.5rem)}
 
   /* pie */
   footer{background:var(--surface-2); border-top:1px solid var(--line); padding-block:clamp(2.5rem,5vw,3.5rem) 2rem}
@@ -332,8 +365,8 @@
     <div class="hero-grid">
       <div>
         <p class="eyebrow">Clínica dental · Ciudad de México</p>
-        <h1>La primera cita es una <em>conversación</em>, no un taladro.</h1>
-        <p class="lede">Revisión completa, radiografía panorámica y un plan de tratamiento por escrito con costos cerrados. Nada empieza sin que lo apruebes.</p>
+        <h1>La primera vez que abres la boca aquí, es para <em>hablar</em>.</h1>
+        <p class="lede">Una conversación, no un taladro. Revisión completa, radiografía panorámica y un plan por escrito con costos cerrados: nada empieza sin que lo apruebes.</p>
 
         <dl class="facts">
           <div class="fact">
@@ -413,7 +446,7 @@
   <section id="tratamientos" class="wrap">
     <div class="sec-head">
       <p class="eyebrow">Tratamientos</p>
-      <h2 class="sec">Precios de referencia, publicados desde el principio.</h2>
+      <h2 class="sec">Los precios, de entrada y en voz alta.</h2>
       <p>Lo que ves abajo es el punto de partida. El costo exacto se fija después de la revisión y no cambia a medio tratamiento.</p>
     </div>
 
@@ -457,6 +490,7 @@
     <div class="sec-head">
       <p class="eyebrow">Tu primera visita</p>
       <h2 class="sec">Tres pasos, en ese orden.</h2>
+      <p>Nadie te toca un diente antes de que sepas exactamente cuánto va a costar.</p>
     </div>
     <div class="pasos">
       <article class="paso">
@@ -481,7 +515,7 @@
     <section id="equipo" class="wrap">
       <div class="sec-head">
         <p class="eyebrow">Quiénes te atienden</p>
-        <h2 class="sec">Dos manos, el mismo consultorio, siempre.</h2>
+        <h2 class="sec">El mismo consultorio y las mismas dos personas.</h2>
         <p>No rotamos pacientes entre practicantes: quien te revisa la primera vez es quien te trata.</p>
       </div>
       <div class="equipo">
@@ -516,6 +550,10 @@
         <p>Dínoslo al agendar y lo anotamos en tu expediente. Usamos anestesia tópica antes de la infiltración, vamos por pasos y paramos cuando levantes la mano. Para casos de ansiedad alta trabajamos con sedación consciente supervisada.</p>
       </details>
       <details>
+        <summary>Llevo años tapándome la boca en las fotos. ¿Eso se arregla?</summary>
+        <p>Depende de qué lo esté causando: manchas, apiñamiento, un diente astillado o una restauración vieja que ya se nota. En la primera visita te decimos cuál es tu caso, qué se puede corregir, en cuántas sesiones y con qué costo. También te diremos qué no vale la pena tocar.</p>
+      </details>
+      <details>
         <summary>¿Atienden niños?</summary>
         <p>Sí, desde los 3 años con el Dr. Ferrer. La primera visita de un niño es solo de reconocimiento: se sube al sillón, conoce los instrumentos y no le hacemos nada.</p>
       </details>
@@ -529,6 +567,14 @@
       </details>
     </div>
   </section>
+
+  <div class="cierre-wrap">
+    <section class="cierre wrap">
+      <div class="arco" aria-hidden="true"></div>
+      <p>Aquí nadie se ha reído con la mano en la boca.</p>
+      <a class="btn" href="#agendar">Agendar cita</a>
+    </section>
+  </div>
 
 </main>
 
