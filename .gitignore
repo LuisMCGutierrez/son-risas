@@ -11,3 +11,7 @@ node_modules/
 
 # ajustes locales de Claude Code, propios de cada máquina
 .claude/settings.local.json
+
+# enlaces a los skills: los crea `skills add` con rutas absolutas de esta
+# máquina, así que no sirven en otra. La fuente versionada va en .agents/
+.claude/skills/
