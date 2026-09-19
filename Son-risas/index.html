@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Son-risas · Clínica dental en Del Valle, CDMX</title>
+<title>Son-risas — Clínica dental en Del Valle, CDMX</title>
 <meta name="description" content="SITIO DE DEMOSTRACIÓN. Maqueta de landing page para una clínica dental ficticia. No corresponde a ningún establecimiento real y su contenido no constituye oferta de servicios de salud.">
-<meta name="theme-color" content="#0F5F51">
+<meta name="theme-color" content="#E9E0CC">
 
 <!-- Mientras sea una maqueta, esto la mantiene fuera de Google para que nadie
      la encuentre creyendo que es una clínica real. Quítalo al publicar el sitio definitivo. -->
@@ -21,14 +21,14 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="es_MX">
 <meta property="og:site_name" content="Son-risas">
-<meta property="og:title" content="Son-risas · Clínica dental en Del Valle, CDMX">
+<meta property="og:title" content="Son-risas — Clínica dental en Del Valle, CDMX">
 <meta property="og:description" content="Valoración y plan de tratamiento por escrito sin costo. La primera vez que abres la boca aquí, es para hablar.">
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F5F51'/><path d='M9 13.5q7 7 14 0' fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round'/></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23E9E0CC'/><path d='M8 13q8 8 16 0' fill='none' stroke='%232743B8' stroke-width='3.4' stroke-linecap='round'/></svg>">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..600&display=swap">
 
 <style>
   :root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -36,303 +36,347 @@
   [hidden]{display:none !important}
 </style>
 <style>
+  /* ====================================================================
+     SON-RISAS — un plan impreso, y una sola vez la recta se abre.
+     La marca vive en un trazo recto que solo se curva donde algo se abre.
+     Ver README.md antes de tocar el arco o el copy.
+     ==================================================================== */
+
   /* ---------- tokens: luz ---------- */
   :root{
-    --ground:#F4F6F4;
-    --surface:#FFFFFF;
-    --surface-2:#E9EEEA;
-    --ink:#14201D;
-    --ink-2:#55635E;
-    --line:#D3DCD7;
-    --accent:#0F5F51;
-    --accent-hover:#0B4B40;
-    --accent-soft:#D9E8E3;
-    --accent-ink:#FFFFFF;
-    --shadow:0 1px 2px rgba(20,32,29,.05), 0 12px 32px -18px rgba(20,32,29,.28);
+    --paper:#E9E0CC;
+    --paper-2:#DFD4BA;
+    --ink:#1B2036;
+    --ink-2:#4F556B;
+    --rule:#C6BA9E;
+    --anil:#2743B8;
+    --anil-hover:#1B3183;
+    --anil-ink:#FFFFFF;
 
     /* el radio que convierte una recta en sonrisa; se reutiliza en toda la pagina */
     --arco:0 0 50% 50% / 0 0 100% 100%;
 
-    --display:"Instrument Serif", Georgia, "Times New Roman", serif;
-    --body:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+    --display:"Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+    --body:"Newsreader", Georgia, "Times New Roman", serif;
   }
   @media (prefers-color-scheme: dark){
     :root:not([data-theme="light"]){
-      --ground:#0E1412;
-      --surface:#151D1A;
-      --surface-2:#1C2622;
-      --ink:#E8EEEA;
-      --ink-2:#9DAEA8;
-      --line:#27332F;
-      --accent:#5FC3AC;
-      --accent-hover:#7ED3BE;
-      --accent-soft:#18302B;
-      --accent-ink:#0B1210;
-      --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -20px rgba(0,0,0,.8);
+      --paper:#161A28;
+      --paper-2:#1E2436;
+      --ink:#EDE4D0;
+      --ink-2:#9AA0B4;
+      --rule:#333A52;
+      --anil:#8CA6FF;
+      --anil-hover:#AFC0FF;
+      --anil-ink:#10121C;
     }
   }
   :root[data-theme="dark"]{
-    --ground:#0E1412;
-    --surface:#151D1A;
-    --surface-2:#1C2622;
-    --ink:#E8EEEA;
-    --ink-2:#9DAEA8;
-    --line:#27332F;
-    --accent:#5FC3AC;
-    --accent-hover:#7ED3BE;
-    --accent-soft:#18302B;
-    --accent-ink:#0B1210;
-    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -20px rgba(0,0,0,.8);
+    --paper:#161A28;
+    --paper-2:#1E2436;
+    --ink:#EDE4D0;
+    --ink-2:#9AA0B4;
+    --rule:#333A52;
+    --anil:#8CA6FF;
+    --anil-hover:#AFC0FF;
+    --anil-ink:#10121C;
   }
 
   *{box-sizing:border-box}
   body{
     margin:0;
-    background:var(--ground);
+    background:var(--paper);
     color:var(--ink);
     font-family:var(--body);
-    font-size:1.0625rem;
-    line-height:1.6;
+    font-size:1.125rem;
+    line-height:1.68;
     -webkit-font-smoothing:antialiased;
   }
-  ::selection{background:var(--accent-soft); color:var(--ink)}
+  ::selection{background:var(--anil); color:var(--anil-ink)}
   a{color:inherit}
   :where(a,button,input,select,textarea,summary):focus-visible{
-    outline:2px solid var(--accent);
+    outline:2.5px solid var(--anil);
     outline-offset:3px;
-    border-radius:4px;
   }
 
-  .wrap{width:min(1120px,100%); margin-inline:auto; padding-inline:clamp(20px,5vw,40px)}
+  .wrap{width:min(1080px,100%); margin-inline:auto; padding-inline:clamp(20px,5vw,44px)}
+  .band{padding-block:clamp(3.25rem,7vw,5.5rem)}
+
+  h1,h2,h3,.display{
+    font-family:var(--display);
+    font-variation-settings:"wdth" 100;
+    letter-spacing:-.022em;
+    text-wrap:balance;
+  }
 
   /* ---------- el guion: motivo de marca ----------
      La recta es la norma. La curva es la excepcion y solo aparece donde algo
-     se abre: el wordmark al tocarlo, una pregunta al desplegarse, el ultimo
-     paso, el cierre. Si todo se curvara dejaria de significar nada.
+     se abre: el wordmark al tocarlo, una pregunta al desplegarse, el arco del
+     hero al cargar, el cierre. Si todo se curvara dejaria de significar nada.
      El trazo vive en el borde inferior de una caja de altura fija, asi que
      solo se anima el radio y nada empuja al texto de al lado. */
   .dash{
     display:inline-block;
     width:1.1em; height:.34em;
-    border-bottom:.14em solid var(--accent);
+    border-bottom:.14em solid var(--anil);
     border-radius:0;
     vertical-align:.24em;
     margin-inline:.14em;
     transition:border-radius .3s cubic-bezier(.3,.7,.3,1);
   }
-  .eyebrow{
-    display:flex; align-items:center; gap:.7rem;
-    font-size:.7rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--ink-2); margin:0 0 1rem;
-  }
-  .eyebrow::before{content:""; width:26px; height:2px; background:var(--accent); flex:none}
 
   /* ---------- aviso de maqueta ---------- */
-  .demo{background:var(--surface-2); border-bottom:1px solid var(--line); color:var(--ink-2)}
+  .demo{background:var(--paper-2); border-bottom:1px solid var(--rule); color:var(--ink-2)}
   .demo-in{
     display:flex; align-items:baseline; gap:.5rem .85rem; flex-wrap:wrap;
-    padding-block:.6rem; font-size:.8rem; line-height:1.45;
+    padding-block:.62rem; font-size:.82rem; line-height:1.5;
   }
   .demo b{
-    color:var(--accent); font-size:.68rem; font-weight:700;
+    font-family:var(--display);
+    color:var(--anil); font-size:.68rem; font-weight:700;
     letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
   }
   .demo span{max-width:82ch}
 
   .demo-legal{
-    border:1px solid var(--line); border-radius:10px;
-    padding:1.15rem 1.35rem; margin-bottom:2.25rem;
-    font-size:.86rem; color:var(--ink-2); max-width:78ch;
+    border-top:1px solid var(--rule);
+    padding-top:1.5rem; margin-bottom:2.25rem;
+    font-size:.88rem; color:var(--ink-2); max-width:76ch;
   }
   .demo-legal h4{
-    margin:0 0 .5rem; font-size:.7rem; font-weight:700;
-    letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+    font-family:var(--display);
+    margin:0 0 .55rem; font-size:.7rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--anil);
   }
-  .demo-legal p{margin:0 0 .6rem; font-size:.86rem}
+  .demo-legal p{margin:0 0 .65rem; font-size:.88rem}
   .demo-legal p:last-child{margin-bottom:0}
 
   /* ---------- encabezado ---------- */
   .top{
     position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
-    background:color-mix(in srgb, var(--ground) 88%, transparent);
+    background:color-mix(in srgb, var(--paper) 90%, transparent);
     backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
+    border-bottom:1px solid var(--rule);
   }
-  .top-in{display:flex; align-items:center; gap:1.5rem; min-height:68px}
+  .top-in{display:flex; align-items:center; gap:1.5rem; min-height:66px}
   .wordmark{
-    font-family:var(--display); font-size:1.6rem; letter-spacing:-.01em;
+    font-family:var(--display); font-weight:700;
+    font-size:1.45rem; letter-spacing:-.03em;
     text-decoration:none; margin-right:auto; white-space:nowrap;
   }
-  .wordmark .dash, .foot-mark .dash{width:.5em; height:.16em; border-bottom-width:.1em; vertical-align:.3em; margin-inline:.1em}
-  /* la marca se abre cuando la tocas. no se anuncia en ninguna parte. */
+  .wordmark .dash, .foot-mark .dash{width:.46em; height:.16em; border-bottom-width:.11em; vertical-align:.3em; margin-inline:.09em}
   .wordmark:hover .dash, .wordmark:focus-visible .dash{border-radius:var(--arco)}
-  .top nav{display:flex; gap:1.6rem; font-size:.92rem}
+  .top nav{display:flex; gap:1.5rem; font-size:.95rem}
   .top nav a{color:var(--ink-2); text-decoration:none}
   .top nav a:hover{color:var(--ink)}
-  .tel{font-size:.92rem; color:var(--ink-2); text-decoration:none; font-variant-numeric:tabular-nums}
+  .tel{font-size:.95rem; color:var(--ink-2); text-decoration:none; font-variant-numeric:tabular-nums}
   .tel:hover{color:var(--ink)}
 
   .btn{
-    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
-    font-family:var(--body); font-size:.95rem; font-weight:600;
-    padding:.68rem 1.25rem; border-radius:6px; border:1px solid transparent;
-    background:var(--accent); color:var(--accent-ink);
+    display:inline-flex; align-items:center; justify-content:center;
+    font-family:var(--display); font-size:.95rem; font-weight:600; letter-spacing:-.01em;
+    padding:.72rem 1.35rem; border:2px solid var(--anil); border-radius:0;
+    background:var(--anil); color:var(--anil-ink);
     text-decoration:none; cursor:pointer;
-    transition:background .15s ease;
+    transition:background .15s ease, border-color .15s ease;
   }
-  .btn:hover{background:var(--accent-hover)}
-  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
-  .btn-ghost:hover{background:var(--surface-2)}
-  .btn-lg{width:100%; padding:.9rem 1.25rem; font-size:1rem}
+  .btn:hover{background:var(--anil-hover); border-color:var(--anil-hover)}
+  .btn-lg{width:100%; padding:.95rem 1.35rem; font-size:1.02rem}
 
-  /* ---------- hero ---------- */
-  .hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(2.5rem,5vw,4rem)}
-  .hero-grid{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(2rem,5vw,4.5rem); align-items:start}
+  /* ---------- hero ----------
+     Una sola columna. El titular se sienta dentro del arco: la pagina se abre
+     al llegar, una vez, y no se vuelve a mover. */
+  .hero{padding-block:clamp(3rem,8vw,6rem) clamp(2.5rem,5vw,4rem)}
   h1{
-    font-family:var(--display); font-weight:400;
-    font-size:clamp(2.5rem,5.4vw,4rem); line-height:1.04; letter-spacing:-.02em;
-    margin:0 0 1.25rem; text-wrap:balance;
+    font-weight:600;
+    font-size:clamp(2.4rem,6.6vw,5.1rem); line-height:1.02;
+    margin:0; max-width:15ch;
   }
-  h1 em{font-style:italic; color:var(--accent)}
-  .lede{font-size:1.15rem; color:var(--ink-2); max-width:34ch; margin:0 0 2.25rem}
-
-  .facts{display:grid; gap:1px; background:var(--line); border-block:1px solid var(--line)}
-  .fact{background:var(--ground); padding:.95rem 0 .95rem}
-  .fact dt{font-size:.7rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2)}
-  .fact dd{margin:.2rem 0 0; font-size:.98rem; font-variant-numeric:tabular-nums}
-
-  /* ---------- tarjeta de cita ---------- */
-  .cita{
-    background:var(--surface); border:1px solid var(--line); border-radius:14px;
-    box-shadow:var(--shadow); padding:clamp(1.5rem,3vw,2rem);
-    scroll-margin-top:96px;
+  .arco-hero{
+    display:block; width:min(660px,100%); height:auto; color:var(--anil);
+    margin:clamp(.9rem,2vw,1.4rem) 0 clamp(1.6rem,3.5vw,2.4rem);
   }
-  .cita h2{font-family:var(--display); font-weight:400; font-size:1.85rem; margin:0; letter-spacing:-.01em}
-  .cita .hint{margin:.35rem 0 1.5rem; font-size:.9rem; color:var(--ink-2)}
-  .field{display:grid; gap:.4rem; margin-bottom:1rem}
-  .field label{font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2)}
-  .field input, .field select{
-    font-family:var(--body); font-size:1rem; color:var(--ink);
-    background:var(--ground); border:1px solid var(--line); border-radius:6px;
-    padding:.7rem .8rem; width:100%;
+  .arco-hero path{
+    stroke-dasharray:1; stroke-dashoffset:1;
+    animation:trazo 1.15s cubic-bezier(.22,.72,.24,1) .2s forwards;
   }
-  .field input:hover, .field select:hover{border-color:var(--ink-2)}
-  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
-  .consent{display:flex; gap:.6rem; align-items:flex-start; font-size:.82rem; color:var(--ink-2); margin:.25rem 0 1.25rem}
-  .consent input{margin-top:.2rem; accent-color:var(--accent); flex:none}
-  .status{
-    margin:1rem 0 0; font-size:.9rem; padding:.7rem .85rem; border-radius:6px;
-    background:var(--accent-soft); color:var(--ink);
+  @keyframes trazo{to{stroke-dashoffset:0}}
+
+  .lede{font-size:1.2rem; color:var(--ink-2); max-width:46ch; margin:0 0 2rem}
+  .hero-cta{
+    display:flex; flex-wrap:wrap; align-items:center; gap:.85rem 1.6rem;
+    margin-bottom:clamp(2.5rem,5vw,3.5rem);
   }
-  .status[data-kind="error"]{background:transparent; border:1px solid var(--line); color:var(--ink-2)}
-  .alt{margin:1.1rem 0 0; font-size:.9rem; color:var(--ink-2); text-align:center}
-  .alt a{color:var(--accent); font-weight:600; text-decoration:none}
-  .alt a:hover{text-decoration:underline}
-
-  /* ---------- secciones ---------- */
-  section{padding-block:clamp(3rem,6vw,4.75rem)}
-  .sec-head{max-width:46ch; margin-bottom:2.5rem}
-  h2.sec{font-family:var(--display); font-weight:400; font-size:clamp(1.8rem,3.4vw,2.5rem); line-height:1.12; letter-spacing:-.015em; margin:0 0 .6rem; text-wrap:balance}
-  .sec-head p{margin:0; color:var(--ink-2)}
-
-  /* tratamientos: filetes, no tarjetas */
-  .trats{border-top:1px solid var(--line)}
-  .trat{
-    display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) auto;
-    gap:.4rem 2rem; align-items:baseline;
-    padding-block:1.35rem; border-bottom:1px solid var(--line);
+  .enlace{
+    font-family:var(--display); font-size:.98rem; font-weight:600; color:var(--anil);
+    text-decoration:underline; text-underline-offset:4px; text-decoration-thickness:1.5px;
   }
-  .trat h3{margin:0; font-size:1.1rem; font-weight:600; letter-spacing:-.01em}
-  .trat p{margin:0; color:var(--ink-2); font-size:.95rem}
-  .price{font-size:.95rem; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink-2)}
-  .price b{font-weight:600; color:var(--ink)}
-  .nota{margin:1.5rem 0 0; font-size:.88rem; color:var(--ink-2); max-width:56ch}
+  .enlace:hover{color:var(--anil-hover)}
 
-  /* primera visita: secuencia real, por eso va numerada */
-  .pasos{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.5rem,3vw,2.5rem); counter-reset:paso}
-  .paso{border-top:2px solid var(--accent); padding-top:1.1rem}
+  /* datos duros, con el aire de un pie de impreso */
+  .facts{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem 2.5rem;
+    border-top:2px solid var(--ink); padding-top:1.25rem; margin:0;
+  }
+  .fact dt{font-family:var(--body); font-style:italic; font-size:.95rem; color:var(--ink-2)}
+  .fact dd{
+    font-family:var(--display); font-weight:500;
+    margin:.15rem 0 0; font-size:1rem; line-height:1.4; font-variant-numeric:tabular-nums;
+  }
+
+  /* ---------- encabezados de seccion ---------- */
+  .sec-head{max-width:34ch; margin-bottom:clamp(2rem,4vw,3rem)}
+  h2{font-weight:600; font-size:clamp(1.9rem,4vw,2.9rem); line-height:1.08; margin:0 0 .65rem}
+  .sec-head p{margin:0; color:var(--ink-2); font-size:1.08rem; max-width:44ch}
+
+  /* ---------- precios: lista de impreso ----------
+     Los puntos guia no decoran: dicen que esto es una lista de costos de
+     verdad, que es justo lo que promete la seccion. */
+  .lista{list-style:none; margin:0; padding:0; border-top:2px solid var(--ink)}
+  .trat{padding-block:1.4rem; border-bottom:1px solid var(--rule)}
+  .trat-top{display:flex; align-items:baseline; gap:0}
+  .trat h3{font-weight:600; font-size:1.22rem; margin:0; flex:none}
+  .guia{flex:1 1 2rem; min-width:1.5rem; height:.6em; margin:0 .8rem; border-bottom:2px dotted var(--rule)}
+  .price{
+    flex:none; margin:0; font-family:var(--display); font-size:1rem; color:var(--ink-2);
+    font-variant-numeric:tabular-nums; white-space:nowrap;
+  }
+  .price b{font-weight:700; font-size:1.18rem; color:var(--ink)}
+  .trat .det{margin:.3rem 0 0; color:var(--ink-2); font-size:1rem; max-width:52ch}
+  .nota{margin:1.75rem 0 0; font-size:1rem; color:var(--ink-2); max-width:58ch}
+
+  /* ---------- primera visita: secuencia real, por eso va numerada ---------- */
+  .pasos{
+    display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.75rem,4vw,3rem);
+    counter-reset:paso; margin:0; padding:0; list-style:none;
+  }
+  .paso{border-top:2px solid var(--ink); padding-top:1rem}
   .paso::before{
-    counter-increment:paso; content:"0" counter(paso);
-    display:block; font-variant-numeric:tabular-nums;
-    font-size:.75rem; font-weight:700; letter-spacing:.14em; color:var(--accent); margin-bottom:.5rem;
+    counter-increment:paso; content:counter(paso);
+    display:block; font-family:var(--display); font-weight:700;
+    font-size:2.6rem; line-height:1; color:var(--anil); margin-bottom:.6rem;
+    font-variant-numeric:tabular-nums;
   }
-  .paso h3{margin:0 0 .4rem; font-size:1.05rem; font-weight:600}
-  .paso p{margin:0; color:var(--ink-2); font-size:.95rem}
-  .paso .dur{display:block; margin-top:.5rem; font-size:.8rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
+  .paso h3{margin:0 0 .35rem; font-size:1.15rem; font-weight:600}
+  .paso p{margin:0; color:var(--ink-2); font-size:1rem}
+  .paso .dur{
+    display:block; margin-top:.7rem; font-family:var(--display);
+    font-size:.9rem; color:var(--ink); font-variant-numeric:tabular-nums;
+  }
 
-  /* equipo */
-  .equipo-wrap{background:var(--surface-2)}
-  .equipo{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.5rem,4vw,3rem)}
-  .persona{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:1.5rem}
-  .persona h3{margin:0; font-family:var(--display); font-weight:400; font-size:1.4rem}
-  .persona .rol{margin:.15rem 0 .85rem; font-size:.8rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent)}
-  .persona p{margin:0; color:var(--ink-2); font-size:.95rem}
-  .persona .ced{display:block; margin-top:.9rem; font-size:.8rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
+  /* ---------- equipo: sin tarjetas ---------- */
+  .equipo-wrap{background:var(--paper-2); border-block:1px solid var(--rule)}
+  .equipo{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(2rem,5vw,4rem);
+    margin:0; padding:0; list-style:none;
+  }
+  .persona{border-top:2px solid var(--ink); padding-top:1.1rem}
+  .persona h3{margin:0; font-size:1.5rem; font-weight:600}
+  .persona .rol{margin:.1rem 0 .8rem; font-style:italic; font-size:1rem; color:var(--anil)}
+  .persona p{margin:0; color:var(--ink-2); font-size:1rem; max-width:44ch}
+  .persona .ced{
+    display:block; margin-top:1rem; font-family:var(--display);
+    font-size:.86rem; color:var(--ink-2); font-variant-numeric:tabular-nums;
+  }
 
-  /* preguntas */
-  .faq{border-top:1px solid var(--line); max-width:62ch}
-  details{border-bottom:1px solid var(--line)}
+  /* ---------- preguntas ---------- */
+  .faq{border-top:2px solid var(--ink); max-width:64ch}
+  details{border-bottom:1px solid var(--rule)}
   summary{
-    list-style:none; cursor:pointer; padding-block:1.15rem;
+    list-style:none; cursor:pointer; padding-block:1.2rem;
     display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
-    font-weight:600; font-size:1.02rem;
+    font-family:var(--display); font-weight:600; font-size:1.1rem; letter-spacing:-.015em;
   }
   summary::-webkit-details-marker{display:none}
   summary::after{
-    content:""; width:14px; height:5px; flex:none;
+    content:""; width:15px; height:6px; flex:none;
     position:relative; top:-2px;
-    border-bottom:2px solid var(--accent); border-radius:0;
+    border-bottom:2.5px solid var(--anil); border-radius:0;
     transition:border-radius .28s cubic-bezier(.3,.7,.3,1);
   }
   /* abrir una pregunta es abrir la boca */
   details[open] summary::after{border-radius:var(--arco)}
-  details p{margin:0 0 1.15rem; color:var(--ink-2); font-size:.96rem; max-width:58ch}
+  details p{margin:0 0 1.25rem; color:var(--ink-2); font-size:1.05rem; max-width:58ch}
 
-  /* cierre: una sola frase y todo el aire posible */
-  .cierre-wrap{background:var(--surface-2); border-top:1px solid var(--line)}
+  /* ---------- cierre: una sola frase y todo el aire posible ---------- */
+  .cierre-wrap{background:var(--paper-2); border-top:1px solid var(--rule)}
   .cierre{text-align:center; padding-block:clamp(4rem,9vw,6.5rem)}
   .cierre .arco{
-    width:min(240px,42vw); height:30px; margin:0 auto clamp(1.75rem,3.5vw,2.5rem);
-    border-bottom:3px solid var(--accent);
+    width:min(250px,44vw); height:32px; margin:0 auto clamp(1.75rem,3.5vw,2.5rem);
+    border-bottom:3px solid var(--anil);
     border-radius:var(--arco);
   }
   .cierre p{
-    font-family:var(--display); font-weight:400;
-    font-size:clamp(1.75rem,4.2vw,2.9rem); line-height:1.14; letter-spacing:-.015em;
-    margin:0 auto; max-width:20ch; text-wrap:balance;
+    font-family:var(--display); font-weight:600;
+    font-size:clamp(1.8rem,4.6vw,3.1rem); line-height:1.1; letter-spacing:-.025em;
+    margin:0 auto; max-width:19ch; text-wrap:balance;
   }
-  .cierre .btn{margin-top:clamp(1.75rem,3.5vw,2.5rem)}
 
-  /* pie */
-  footer{background:var(--surface-2); border-top:1px solid var(--line); padding-block:clamp(2.5rem,5vw,3.5rem) 2rem}
-  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem}
-  .foot-grid h4{margin:0 0 .7rem; font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2)}
-  .foot-grid p, .foot-grid a{margin:0 0 .3rem; font-size:.95rem; color:var(--ink-2); text-decoration:none; display:block}
+  /* ---------- formulario: un impreso que se llena ---------- */
+  .cita-wrap{border-top:1px solid var(--rule)}
+  .cita{max-width:44rem; scroll-margin-top:90px}
+  .cita .hint{margin:0 0 2rem; color:var(--ink-2); font-size:1.08rem; max-width:44ch}
+  .field{display:grid; gap:.35rem; margin-bottom:1.15rem}
+  .field label{font-family:var(--display); font-size:.92rem; font-weight:600; color:var(--ink)}
+  .field input, .field select{
+    font-family:var(--body); font-size:1.05rem; color:var(--ink);
+    background:var(--paper-2);
+    border:1px solid var(--rule); border-bottom:2px solid var(--ink-2); border-radius:0;
+    padding:.72rem .85rem; width:100%;
+  }
+  .field input:hover, .field select:hover{border-bottom-color:var(--anil)}
+  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:1.15rem}
+  .consent{
+    display:flex; gap:.65rem; align-items:flex-start; max-width:52ch;
+    font-size:.95rem; color:var(--ink-2); margin:.4rem 0 1.4rem;
+  }
+  .consent input{margin-top:.35rem; accent-color:var(--anil); flex:none; width:1.05rem; height:1.05rem}
+  .status{
+    margin:1.15rem 0 0; font-size:1rem; padding:.85rem 1rem;
+    background:var(--paper-2); border-left:3px solid var(--anil); color:var(--ink);
+  }
+  .status[data-kind="error"]{border-left-color:var(--ink-2); color:var(--ink-2)}
+  .alt{margin:1.25rem 0 0; font-size:1rem; color:var(--ink-2)}
+  .alt a{color:var(--anil); font-weight:600; text-decoration:underline; text-underline-offset:3px}
+
+  /* ---------- pie ---------- */
+  footer{background:var(--paper-2); border-top:1px solid var(--rule); padding-block:clamp(2.5rem,5vw,3.5rem) 2rem}
+  .foot-grid{display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:2.5rem}
+  .foot-grid h4{font-family:var(--display); margin:0 0 .6rem; font-size:.95rem; font-weight:600; color:var(--ink)}
+  .foot-grid p, .foot-grid a{margin:0 0 .3rem; font-size:1rem; color:var(--ink-2); text-decoration:none; display:block}
   .foot-grid a:hover{color:var(--ink)}
-  .foot-mark{font-family:var(--display); font-size:1.5rem; margin-bottom:.6rem}
+  .foot-mark{
+    font-family:var(--display); font-weight:700; font-size:1.4rem;
+    letter-spacing:-.03em; color:var(--ink); margin-bottom:.6rem;
+  }
   .legal{
-    margin-top:2.5rem; padding-top:1.25rem; border-top:1px solid var(--line);
+    margin-top:2.5rem; padding-top:1.25rem; border-top:1px solid var(--rule);
     display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; justify-content:space-between;
-    font-size:.82rem; color:var(--ink-2);
+    font-size:.86rem; color:var(--ink-2);
   }
 
   /* ---------- adaptable ---------- */
   @media (max-width:900px){
     .top nav, .tel{display:none}
-    .hero-grid{grid-template-columns:1fr}
-    .lede{max-width:52ch}
+    .facts{grid-template-columns:1fr; gap:1.1rem}
     .pasos{grid-template-columns:1fr}
     .equipo{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr 1fr}
-    .trat{grid-template-columns:1fr auto; gap:.3rem 1.5rem}
-    .trat p{grid-column:1 / -1}
   }
-  @media (max-width:520px){
+  @media (max-width:560px){
+    body{font-size:1.06rem}
     .row-2{grid-template-columns:1fr}
     .foot-grid{grid-template-columns:1fr}
+    .trat-top{flex-wrap:wrap}
+    .guia{display:none}
+    .price{margin-top:.15rem; width:100%}
+    .hero-cta{gap:1.1rem}
+    .hero-cta .btn{width:100%}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important; animation:none !important}
+    /* sin animacion el trazo debe quedar dibujado, no invisible */
+    .arco-hero path{stroke-dashoffset:0}
   }
 </style>
 </head>
@@ -362,183 +406,149 @@
 <main id="inicio">
 
   <section class="hero wrap">
-    <div class="hero-grid">
-      <div>
-        <p class="eyebrow">Clínica dental · Ciudad de México</p>
-        <h1>La primera vez que abres la boca aquí, es para <em>hablar</em>.</h1>
-        <p class="lede">Una conversación, no un taladro. Revisión completa, radiografía panorámica y un plan por escrito con costos cerrados: nada empieza sin que lo apruebes.</p>
+    <h1>La primera vez que abres la boca aquí, es para hablar.</h1>
 
-        <dl class="facts">
-          <div class="fact">
-            <dt>Horario</dt>
-            <dd id="fact-horario">Lun a Vie 9:00–20:00 · Sáb 9:00–14:00</dd>
-          </div>
-          <div class="fact">
-            <dt>Dónde estamos</dt>
-            <dd id="fact-direccion">Av. Insurgentes Sur 1234, Col. Del Valle</dd>
-          </div>
-          <div class="fact">
-            <dt>Urgencias</dt>
-            <dd>Dolor agudo o diente fracturado: atendemos el mismo día</dd>
-          </div>
-        </dl>
-      </div>
+    <!-- El unico momento con movimiento de toda la pagina: la recta se abre una
+         vez, al llegar. Es la regla de marca a tamaño completo. -->
+    <svg class="arco-hero" viewBox="0 0 660 96" fill="none" aria-hidden="true">
+      <path d="M8 10 C 132 86, 528 86, 652 10"
+            pathLength="1"
+            stroke="currentColor" stroke-width="9" stroke-linecap="round"/>
+    </svg>
 
-      <div class="cita" id="agendar">
-        <h2>Agendar cita</h2>
-        <p class="hint">Déjanos tus datos y confirmamos por WhatsApp en menos de 2 horas hábiles.</p>
+    <p class="lede">Una conversación, no un taladro. Revisión completa, radiografía panorámica y un plan por escrito con costos cerrados: nada empieza sin que lo apruebes.</p>
 
-        <form id="form-cita" novalidate>
-          <div class="field">
-            <label for="nombre">Nombre completo</label>
-            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ana Martínez Soto" required>
-          </div>
-
-          <div class="field">
-            <label for="telefono">Teléfono / WhatsApp</label>
-            <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678" required>
-          </div>
-
-          <div class="field">
-            <label for="motivo">Motivo de la consulta</label>
-            <select id="motivo" name="motivo" required>
-              <option value="Valoración general">Valoración general — no sé qué necesito</option>
-              <option value="Limpieza dental">Limpieza dental (profilaxis)</option>
-              <option value="Resinas / caries">Resinas · caries</option>
-              <option value="Blanqueamiento">Blanqueamiento</option>
-              <option value="Ortodoncia">Ortodoncia · brackets o alineadores</option>
-              <option value="Endodoncia">Endodoncia (tratamiento de conducto)</option>
-              <option value="Implantes">Implantes y coronas</option>
-              <option value="Odontopediatría">Odontopediatría (niños)</option>
-              <option value="Urgencia por dolor">Urgencia — tengo dolor</option>
-            </select>
-          </div>
-
-          <div class="row-2">
-            <div class="field">
-              <label for="fecha">Día preferido</label>
-              <input id="fecha" name="fecha" type="date" required>
-            </div>
-            <div class="field">
-              <label for="horario">Horario</label>
-              <select id="horario" name="horario" required>
-                <option value="Mañana (9:00–13:00)">Mañana · 9–13 h</option>
-                <option value="Tarde (13:00–17:00)">Tarde · 13–17 h</option>
-                <option value="Noche (17:00–20:00)">Noche · 17–20 h</option>
-              </select>
-            </div>
-          </div>
-
-          <label class="consent">
-            <input id="aviso" name="aviso" type="checkbox" required>
-            <span>Acepto que usen mis datos únicamente para contactarme y agendar mi cita.</span>
-          </label>
-
-          <button class="btn btn-lg" type="submit">Solicitar mi cita</button>
-          <p class="status" id="estado" role="status" aria-live="polite" hidden></p>
-        </form>
-
-        <p class="alt">¿Prefieres hablar? Llámanos al <a id="tel-form" href="tel:+525512345678">55 1234 5678</a></p>
-      </div>
+    <div class="hero-cta">
+      <a class="btn" href="#agendar">Agendar cita</a>
+      <a class="enlace" href="#tratamientos">Ver los precios</a>
     </div>
+
+    <dl class="facts">
+      <div class="fact">
+        <dt>Horario</dt>
+        <dd id="fact-horario">Lunes a viernes, 9:00–20:00<br>Sábado, 9:00–14:00</dd>
+      </div>
+      <div class="fact">
+        <dt>Dónde estamos</dt>
+        <dd id="fact-direccion">Av. Insurgentes Sur 1234<br>Col. Del Valle</dd>
+      </div>
+      <div class="fact">
+        <dt>Urgencias</dt>
+        <dd>Dolor agudo o diente fracturado:<br>atendemos el mismo día</dd>
+      </div>
+    </dl>
   </section>
 
-  <section id="tratamientos" class="wrap">
+  <section id="tratamientos" class="wrap band">
     <div class="sec-head">
-      <p class="eyebrow">Tratamientos</p>
-      <h2 class="sec">Los precios, de entrada y en voz alta.</h2>
+      <h2>Los precios, de entrada y en voz alta.</h2>
       <p>Lo que ves abajo es el punto de partida. El costo exacto se fija después de la revisión y no cambia a medio tratamiento.</p>
     </div>
 
-    <div class="trats">
-      <article class="trat">
-        <h3>Limpieza dental</h3>
-        <p>Profilaxis con ultrasonido y pulido. Sesión de 45 minutos.</p>
-        <p class="price">desde <b>$700</b> MXN</p>
-      </article>
-      <article class="trat">
-        <h3>Resinas</h3>
-        <p>Restauración de caries con resina del color de tu diente.</p>
-        <p class="price">desde <b>$900</b> MXN</p>
-      </article>
-      <article class="trat">
-        <h3>Blanqueamiento</h3>
-        <p>En consultorio, tres aplicaciones en una sola visita.</p>
-        <p class="price">desde <b>$3,500</b> MXN</p>
-      </article>
-      <article class="trat">
-        <h3>Ortodoncia</h3>
-        <p>Brackets metálicos, estéticos o alineadores. Control cada 4 semanas.</p>
-        <p class="price">desde <b>$1,200</b> MXN / mes</p>
-      </article>
-      <article class="trat">
-        <h3>Endodoncia</h3>
-        <p>Tratamiento de conducto en una o dos sesiones, según el diente.</p>
-        <p class="price">desde <b>$2,800</b> MXN</p>
-      </article>
-      <article class="trat">
-        <h3>Implantes</h3>
-        <p>Implante de titanio y corona. Incluye tomografía de planeación.</p>
-        <p class="price">desde <b>$18,000</b> MXN</p>
-      </article>
-    </div>
+    <ul class="lista">
+      <li class="trat">
+        <div class="trat-top">
+          <h3>Limpieza dental</h3>
+          <span class="guia" aria-hidden="true"></span>
+          <p class="price">desde <b>$700</b> MXN</p>
+        </div>
+        <p class="det">Profilaxis con ultrasonido y pulido. Sesión de 45 minutos.</p>
+      </li>
+      <li class="trat">
+        <div class="trat-top">
+          <h3>Resinas</h3>
+          <span class="guia" aria-hidden="true"></span>
+          <p class="price">desde <b>$900</b> MXN</p>
+        </div>
+        <p class="det">Restauración de caries con resina del color de tu diente.</p>
+      </li>
+      <li class="trat">
+        <div class="trat-top">
+          <h3>Blanqueamiento</h3>
+          <span class="guia" aria-hidden="true"></span>
+          <p class="price">desde <b>$3,500</b> MXN</p>
+        </div>
+        <p class="det">En consultorio, tres aplicaciones en una sola visita.</p>
+      </li>
+      <li class="trat">
+        <div class="trat-top">
+          <h3>Ortodoncia</h3>
+          <span class="guia" aria-hidden="true"></span>
+          <p class="price">desde <b>$1,200</b> MXN / mes</p>
+        </div>
+        <p class="det">Brackets metálicos, estéticos o alineadores. Control cada 4 semanas.</p>
+      </li>
+      <li class="trat">
+        <div class="trat-top">
+          <h3>Endodoncia</h3>
+          <span class="guia" aria-hidden="true"></span>
+          <p class="price">desde <b>$2,800</b> MXN</p>
+        </div>
+        <p class="det">Tratamiento de conducto en una o dos sesiones, según el diente.</p>
+      </li>
+      <li class="trat">
+        <div class="trat-top">
+          <h3>Implantes</h3>
+          <span class="guia" aria-hidden="true"></span>
+          <p class="price">desde <b>$18,000</b> MXN</p>
+        </div>
+        <p class="det">Implante de titanio y corona. Incluye tomografía de planeación.</p>
+      </li>
+    </ul>
 
     <p class="nota">Manejamos pagos a meses sin intereses con tarjetas participantes y trabajamos con las principales aseguradoras de gastos médicos mayores. Pregúntanos por tu póliza al agendar.</p>
   </section>
 
-  <section id="visita" class="wrap">
+  <section id="visita" class="wrap band">
     <div class="sec-head">
-      <p class="eyebrow">Tu primera visita</p>
-      <h2 class="sec">Tres pasos, en ese orden.</h2>
+      <h2>Tres pasos, en ese orden.</h2>
       <p>Nadie te toca un diente antes de que sepas exactamente cuánto va a costar.</p>
     </div>
-    <div class="pasos">
-      <article class="paso">
+    <ol class="pasos">
+      <li class="paso">
         <h3>Revisión y radiografía</h3>
         <p>Exploración completa, radiografía panorámica digital y periodontograma si hace falta.</p>
         <span class="dur">40 minutos</span>
-      </article>
-      <article class="paso">
+      </li>
+      <li class="paso">
         <h3>Plan por escrito</h3>
         <p>Te explicamos qué encontramos, qué es urgente y qué puede esperar. Con el presupuesto desglosado en papel.</p>
         <span class="dur">15 minutos, misma visita</span>
-      </article>
-      <article class="paso">
+      </li>
+      <li class="paso">
         <h3>Empezamos</h3>
         <p>Si lo apruebas, agendamos las sesiones que necesites. Si quieres pensarlo, el presupuesto te lo llevas contigo.</p>
         <span class="dur">Cuando tú decidas</span>
-      </article>
-    </div>
+      </li>
+    </ol>
   </section>
 
   <div class="equipo-wrap">
-    <section id="equipo" class="wrap">
+    <section id="equipo" class="wrap band">
       <div class="sec-head">
-        <p class="eyebrow">Quiénes te atienden</p>
-        <h2 class="sec">El mismo consultorio y las mismas dos personas.</h2>
+        <h2>El mismo consultorio y las mismas dos personas.</h2>
         <p>No rotamos pacientes entre practicantes: quien te revisa la primera vez es quien te trata.</p>
       </div>
-      <div class="equipo">
-        <article class="persona">
+      <ul class="equipo">
+        <li class="persona">
           <h3>Dra. Mariana Rojas</h3>
           <p class="rol">Odontología general y estética</p>
           <p>Egresada de la Facultad de Odontología de la UNAM, con posgrado en rehabilitación oral. Catorce años atendiendo en Del Valle.</p>
-          <span class="ced">Ced. Prof. 0000000 · dato de ejemplo</span>
-        </article>
-        <article class="persona">
+          <span class="ced">Ced. Prof. 0000000 — dato de ejemplo</span>
+        </li>
+        <li class="persona">
           <h3>Dr. Julián Ferrer</h3>
           <p class="rol">Ortodoncia y odontopediatría</p>
           <p>Especialista en ortodoncia por la UAM. Trabaja con brackets y alineadores, y es quien atiende a los pacientes más pequeños.</p>
-          <span class="ced">Ced. Esp. 0000000 · dato de ejemplo</span>
-        </article>
-      </div>
+          <span class="ced">Ced. Esp. 0000000 — dato de ejemplo</span>
+        </li>
+      </ul>
     </section>
   </div>
 
-  <section id="preguntas" class="wrap">
+  <section id="preguntas" class="wrap band">
     <div class="sec-head">
-      <p class="eyebrow">Preguntas</p>
-      <h2 class="sec">Lo que casi siempre nos preguntan.</h2>
+      <h2>Lo que casi siempre nos preguntan.</h2>
     </div>
     <div class="faq">
       <details open>
@@ -572,7 +582,65 @@
     <section class="cierre wrap">
       <div class="arco" aria-hidden="true"></div>
       <p>Aquí nadie se ha reído con la mano en la boca.</p>
-      <a class="btn" href="#agendar">Agendar cita</a>
+    </section>
+  </div>
+
+  <div class="cita-wrap">
+    <section class="cita wrap band" id="agendar">
+      <h2>Agendar cita</h2>
+      <p class="hint">Déjanos tus datos y confirmamos por WhatsApp en menos de 2 horas hábiles.</p>
+
+      <form id="form-cita" novalidate>
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ana Martínez Soto" required>
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono o WhatsApp</label>
+          <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678" required>
+        </div>
+
+        <div class="field">
+          <label for="motivo">Motivo de la consulta</label>
+          <select id="motivo" name="motivo" required>
+            <option value="Valoración general">Valoración general, no sé qué necesito</option>
+            <option value="Limpieza dental">Limpieza dental (profilaxis)</option>
+            <option value="Resinas / caries">Resinas y caries</option>
+            <option value="Blanqueamiento">Blanqueamiento</option>
+            <option value="Ortodoncia">Ortodoncia, brackets o alineadores</option>
+            <option value="Endodoncia">Endodoncia (tratamiento de conducto)</option>
+            <option value="Implantes">Implantes y coronas</option>
+            <option value="Odontopediatría">Odontopediatría (niños)</option>
+            <option value="Urgencia por dolor">Urgencia, tengo dolor</option>
+          </select>
+        </div>
+
+        <div class="row-2">
+          <div class="field">
+            <label for="fecha">Día preferido</label>
+            <input id="fecha" name="fecha" type="date" required>
+          </div>
+          <div class="field">
+            <label for="horario">Horario</label>
+            <select id="horario" name="horario" required>
+              <option value="Mañana (9:00–13:00)">Mañana, 9 a 13 h</option>
+              <option value="Tarde (13:00–17:00)">Tarde, 13 a 17 h</option>
+              <option value="Noche (17:00–20:00)">Noche, 17 a 20 h</option>
+            </select>
+          </div>
+        </div>
+
+        <label class="consent">
+          <input id="aviso" name="aviso" type="checkbox" required>
+          <span>Acepto que usen mis datos únicamente para contactarme y agendar mi cita.</span>
+        </label>
+
+        <button class="btn btn-lg" type="submit">Solicitar mi cita</button>
+        <p class="status" id="estado" role="status" aria-live="polite" hidden></p>
+      </form>
+
+      <p class="alt">¿Prefieres hablar? Llámanos al <a id="tel-form" href="tel:+525512345678">55 1234 5678</a></p>
     </section>
   </div>
 
@@ -611,7 +679,6 @@
     </div>
   </div>
 </footer>
-
 <script>
   /* =====================================================================
      DATOS DE LA CLÍNICA — cambia solo estas líneas
