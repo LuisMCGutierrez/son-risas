@@ -1,0 +1,665 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Son-risas · Clínica dental en Del Valle, CDMX</title>
+<meta name="description" content="SITIO DE DEMOSTRACIÓN. Maqueta de landing page para una clínica dental ficticia. No corresponde a ningún establecimiento real y su contenido no constituye oferta de servicios de salud.">
+<meta name="theme-color" content="#0F5F51">
+
+<!-- Mientras sea una maqueta, esto la mantiene fuera de Google para que nadie
+     la encuentre creyendo que es una clínica real. Quítalo al publicar el sitio definitivo. -->
+<meta name="robots" content="noindex, nofollow, noarchive">
+
+<!-- Cuando tengas tu dominio real, descomenta estas dos líneas y pon la URL definitiva.
+     Déjalas comentadas mientras el sitio viva en una dirección temporal (.netlify.app, .pages.dev),
+     porque apuntar a un dominio que no existe hace que Google no indexe la página.
+<link rel="canonical" href="https://son-risas.mx/">
+<meta property="og:url" content="https://son-risas.mx/">
+-->
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta property="og:site_name" content="Son-risas">
+<meta property="og:title" content="Son-risas · Clínica dental en Del Valle, CDMX">
+<meta property="og:description" content="Valoración y plan de tratamiento por escrito sin costo. Agenda tu cita por WhatsApp.">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%230F5F51'/><rect x='8' y='14.5' width='16' height='3' rx='1.5' fill='%23fff'/></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap">
+
+<style>
+  :root{padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px)}
+  img{max-width:100%}
+  [hidden]{display:none !important}
+</style>
+<style>
+  /* ---------- tokens: luz ---------- */
+  :root{
+    --ground:#F4F6F4;
+    --surface:#FFFFFF;
+    --surface-2:#E9EEEA;
+    --ink:#14201D;
+    --ink-2:#55635E;
+    --line:#D3DCD7;
+    --accent:#0F5F51;
+    --accent-hover:#0B4B40;
+    --accent-soft:#D9E8E3;
+    --accent-ink:#FFFFFF;
+    --shadow:0 1px 2px rgba(20,32,29,.05), 0 12px 32px -18px rgba(20,32,29,.28);
+
+    --display:"Instrument Serif", Georgia, "Times New Roman", serif;
+    --body:"Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#0E1412;
+      --surface:#151D1A;
+      --surface-2:#1C2622;
+      --ink:#E8EEEA;
+      --ink-2:#9DAEA8;
+      --line:#27332F;
+      --accent:#5FC3AC;
+      --accent-hover:#7ED3BE;
+      --accent-soft:#18302B;
+      --accent-ink:#0B1210;
+      --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -20px rgba(0,0,0,.8);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#0E1412;
+    --surface:#151D1A;
+    --surface-2:#1C2622;
+    --ink:#E8EEEA;
+    --ink-2:#9DAEA8;
+    --line:#27332F;
+    --accent:#5FC3AC;
+    --accent-hover:#7ED3BE;
+    --accent-soft:#18302B;
+    --accent-ink:#0B1210;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 14px 34px -20px rgba(0,0,0,.8);
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0;
+    background:var(--ground);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:1.0625rem;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent-soft); color:var(--ink)}
+  a{color:inherit}
+  :where(a,button,input,select,textarea,summary):focus-visible{
+    outline:2px solid var(--accent);
+    outline-offset:3px;
+    border-radius:4px;
+  }
+
+  .wrap{width:min(1120px,100%); margin-inline:auto; padding-inline:clamp(20px,5vw,40px)}
+
+  /* ---------- el guion: motivo de marca ---------- */
+  .dash{
+    display:inline-block;
+    width:1.1em; height:.14em;
+    background:var(--accent);
+    vertical-align:.24em;
+    margin-inline:.14em;
+  }
+  .eyebrow{
+    display:flex; align-items:center; gap:.7rem;
+    font-size:.7rem; font-weight:600; letter-spacing:.16em; text-transform:uppercase;
+    color:var(--ink-2); margin:0 0 1rem;
+  }
+  .eyebrow::before{content:""; width:26px; height:2px; background:var(--accent); flex:none}
+
+  /* ---------- aviso de maqueta ---------- */
+  .demo{background:var(--surface-2); border-bottom:1px solid var(--line); color:var(--ink-2)}
+  .demo-in{
+    display:flex; align-items:baseline; gap:.5rem .85rem; flex-wrap:wrap;
+    padding-block:.6rem; font-size:.8rem; line-height:1.45;
+  }
+  .demo b{
+    color:var(--accent); font-size:.68rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; white-space:nowrap;
+  }
+  .demo span{max-width:82ch}
+
+  .demo-legal{
+    border:1px solid var(--line); border-radius:10px;
+    padding:1.15rem 1.35rem; margin-bottom:2.25rem;
+    font-size:.86rem; color:var(--ink-2); max-width:78ch;
+  }
+  .demo-legal h4{
+    margin:0 0 .5rem; font-size:.7rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+  }
+  .demo-legal p{margin:0 0 .6rem; font-size:.86rem}
+  .demo-legal p:last-child{margin-bottom:0}
+
+  /* ---------- encabezado ---------- */
+  .top{
+    position:sticky; top:env(safe-area-inset-top,0px); z-index:20;
+    background:color-mix(in srgb, var(--ground) 88%, transparent);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .top-in{display:flex; align-items:center; gap:1.5rem; min-height:68px}
+  .wordmark{
+    font-family:var(--display); font-size:1.6rem; letter-spacing:-.01em;
+    text-decoration:none; margin-right:auto; white-space:nowrap;
+  }
+  .wordmark .dash, .foot-mark .dash{width:.5em; height:.1em; vertical-align:.3em; margin-inline:.1em}
+  .top nav{display:flex; gap:1.6rem; font-size:.92rem}
+  .top nav a{color:var(--ink-2); text-decoration:none}
+  .top nav a:hover{color:var(--ink)}
+  .tel{font-size:.92rem; color:var(--ink-2); text-decoration:none; font-variant-numeric:tabular-nums}
+  .tel:hover{color:var(--ink)}
+
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+    font-family:var(--body); font-size:.95rem; font-weight:600;
+    padding:.68rem 1.25rem; border-radius:6px; border:1px solid transparent;
+    background:var(--accent); color:var(--accent-ink);
+    text-decoration:none; cursor:pointer;
+    transition:background .15s ease;
+  }
+  .btn:hover{background:var(--accent-hover)}
+  .btn-ghost{background:transparent; color:var(--ink); border-color:var(--line)}
+  .btn-ghost:hover{background:var(--surface-2)}
+  .btn-lg{width:100%; padding:.9rem 1.25rem; font-size:1rem}
+
+  /* ---------- hero ---------- */
+  .hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(2.5rem,5vw,4rem)}
+  .hero-grid{display:grid; grid-template-columns:1.02fr .98fr; gap:clamp(2rem,5vw,4.5rem); align-items:start}
+  h1{
+    font-family:var(--display); font-weight:400;
+    font-size:clamp(2.5rem,5.4vw,4rem); line-height:1.04; letter-spacing:-.02em;
+    margin:0 0 1.25rem; text-wrap:balance;
+  }
+  h1 em{font-style:italic; color:var(--accent)}
+  .lede{font-size:1.15rem; color:var(--ink-2); max-width:34ch; margin:0 0 2.25rem}
+
+  .facts{display:grid; gap:1px; background:var(--line); border-block:1px solid var(--line)}
+  .fact{background:var(--ground); padding:.95rem 0 .95rem}
+  .fact dt{font-size:.7rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2)}
+  .fact dd{margin:.2rem 0 0; font-size:.98rem; font-variant-numeric:tabular-nums}
+
+  /* ---------- tarjeta de cita ---------- */
+  .cita{
+    background:var(--surface); border:1px solid var(--line); border-radius:14px;
+    box-shadow:var(--shadow); padding:clamp(1.5rem,3vw,2rem);
+    scroll-margin-top:96px;
+  }
+  .cita h2{font-family:var(--display); font-weight:400; font-size:1.85rem; margin:0; letter-spacing:-.01em}
+  .cita .hint{margin:.35rem 0 1.5rem; font-size:.9rem; color:var(--ink-2)}
+  .field{display:grid; gap:.4rem; margin-bottom:1rem}
+  .field label{font-size:.78rem; font-weight:600; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-2)}
+  .field input, .field select{
+    font-family:var(--body); font-size:1rem; color:var(--ink);
+    background:var(--ground); border:1px solid var(--line); border-radius:6px;
+    padding:.7rem .8rem; width:100%;
+  }
+  .field input:hover, .field select:hover{border-color:var(--ink-2)}
+  .row-2{display:grid; grid-template-columns:1fr 1fr; gap:1rem}
+  .consent{display:flex; gap:.6rem; align-items:flex-start; font-size:.82rem; color:var(--ink-2); margin:.25rem 0 1.25rem}
+  .consent input{margin-top:.2rem; accent-color:var(--accent); flex:none}
+  .status{
+    margin:1rem 0 0; font-size:.9rem; padding:.7rem .85rem; border-radius:6px;
+    background:var(--accent-soft); color:var(--ink);
+  }
+  .status[data-kind="error"]{background:transparent; border:1px solid var(--line); color:var(--ink-2)}
+  .alt{margin:1.1rem 0 0; font-size:.9rem; color:var(--ink-2); text-align:center}
+  .alt a{color:var(--accent); font-weight:600; text-decoration:none}
+  .alt a:hover{text-decoration:underline}
+
+  /* ---------- secciones ---------- */
+  section{padding-block:clamp(3rem,6vw,4.75rem)}
+  .sec-head{max-width:46ch; margin-bottom:2.5rem}
+  h2.sec{font-family:var(--display); font-weight:400; font-size:clamp(1.8rem,3.4vw,2.5rem); line-height:1.12; letter-spacing:-.015em; margin:0 0 .6rem; text-wrap:balance}
+  .sec-head p{margin:0; color:var(--ink-2)}
+
+  /* tratamientos: filetes, no tarjetas */
+  .trats{border-top:1px solid var(--line)}
+  .trat{
+    display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr) auto;
+    gap:.4rem 2rem; align-items:baseline;
+    padding-block:1.35rem; border-bottom:1px solid var(--line);
+  }
+  .trat h3{margin:0; font-size:1.1rem; font-weight:600; letter-spacing:-.01em}
+  .trat p{margin:0; color:var(--ink-2); font-size:.95rem}
+  .price{font-size:.95rem; font-variant-numeric:tabular-nums; white-space:nowrap; color:var(--ink-2)}
+  .price b{font-weight:600; color:var(--ink)}
+  .nota{margin:1.5rem 0 0; font-size:.88rem; color:var(--ink-2); max-width:56ch}
+
+  /* primera visita: secuencia real, por eso va numerada */
+  .pasos{display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.5rem,3vw,2.5rem); counter-reset:paso}
+  .paso{border-top:2px solid var(--accent); padding-top:1.1rem}
+  .paso::before{
+    counter-increment:paso; content:"0" counter(paso);
+    display:block; font-variant-numeric:tabular-nums;
+    font-size:.75rem; font-weight:700; letter-spacing:.14em; color:var(--accent); margin-bottom:.5rem;
+  }
+  .paso h3{margin:0 0 .4rem; font-size:1.05rem; font-weight:600}
+  .paso p{margin:0; color:var(--ink-2); font-size:.95rem}
+  .paso .dur{display:block; margin-top:.5rem; font-size:.8rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
+
+  /* equipo */
+  .equipo-wrap{background:var(--surface-2)}
+  .equipo{display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(1.5rem,4vw,3rem)}
+  .persona{background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:1.5rem}
+  .persona h3{margin:0; font-family:var(--display); font-weight:400; font-size:1.4rem}
+  .persona .rol{margin:.15rem 0 .85rem; font-size:.8rem; font-weight:600; letter-spacing:.1em; text-transform:uppercase; color:var(--accent)}
+  .persona p{margin:0; color:var(--ink-2); font-size:.95rem}
+  .persona .ced{display:block; margin-top:.9rem; font-size:.8rem; color:var(--ink-2); font-variant-numeric:tabular-nums}
+
+  /* preguntas */
+  .faq{border-top:1px solid var(--line); max-width:62ch}
+  details{border-bottom:1px solid var(--line)}
+  summary{
+    list-style:none; cursor:pointer; padding-block:1.15rem;
+    display:flex; align-items:center; justify-content:space-between; gap:1.5rem;
+    font-weight:600; font-size:1.02rem;
+  }
+  summary::-webkit-details-marker{display:none}
+  summary::after{content:""; width:12px; height:2px; background:var(--accent); flex:none; transition:transform .18s ease}
+  details[open] summary::after{transform:rotate(90deg)}
+  details p{margin:0 0 1.15rem; color:var(--ink-2); font-size:.96rem; max-width:58ch}
+
+  /* pie */
+  footer{background:var(--surface-2); border-top:1px solid var(--line); padding-block:clamp(2.5rem,5vw,3.5rem) 2rem}
+  .foot-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:2.5rem}
+  .foot-grid h4{margin:0 0 .7rem; font-size:.72rem; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-2)}
+  .foot-grid p, .foot-grid a{margin:0 0 .3rem; font-size:.95rem; color:var(--ink-2); text-decoration:none; display:block}
+  .foot-grid a:hover{color:var(--ink)}
+  .foot-mark{font-family:var(--display); font-size:1.5rem; margin-bottom:.6rem}
+  .legal{
+    margin-top:2.5rem; padding-top:1.25rem; border-top:1px solid var(--line);
+    display:flex; flex-wrap:wrap; gap:.75rem 1.5rem; justify-content:space-between;
+    font-size:.82rem; color:var(--ink-2);
+  }
+
+  /* ---------- adaptable ---------- */
+  @media (max-width:900px){
+    .top nav, .tel{display:none}
+    .hero-grid{grid-template-columns:1fr}
+    .lede{max-width:52ch}
+    .pasos{grid-template-columns:1fr}
+    .equipo{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr 1fr}
+    .trat{grid-template-columns:1fr auto; gap:.3rem 1.5rem}
+    .trat p{grid-column:1 / -1}
+  }
+  @media (max-width:520px){
+    .row-2{grid-template-columns:1fr}
+    .foot-grid{grid-template-columns:1fr}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important}
+  }
+</style>
+</head>
+<body>
+
+<div class="demo">
+  <div class="wrap demo-in">
+    <b>Sitio de prueba</b>
+    <span>Esta es una maqueta de diseño. «Son-risas» no existe: los dentistas, las cédulas profesionales, los precios, la dirección y los teléfonos son ficticios y no corresponden a ningún consultorio ni profesional real.</span>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="wordmark" href="#inicio">Son<span class="dash"></span>risas</a>
+    <nav>
+      <a href="#tratamientos">Tratamientos</a>
+      <a href="#visita">Primera visita</a>
+      <a href="#equipo">Equipo</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a class="tel" id="tel-top" href="tel:+525512345678">55 1234 5678</a>
+    <a class="btn" href="#agendar">Agendar cita</a>
+  </div>
+</header>
+
+<main id="inicio">
+
+  <section class="hero wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Clínica dental · Ciudad de México</p>
+        <h1>La primera cita es una <em>conversación</em>, no un taladro.</h1>
+        <p class="lede">Revisión completa, radiografía panorámica y un plan de tratamiento por escrito con costos cerrados. Nada empieza sin que lo apruebes.</p>
+
+        <dl class="facts">
+          <div class="fact">
+            <dt>Horario</dt>
+            <dd id="fact-horario">Lun a Vie 9:00–20:00 · Sáb 9:00–14:00</dd>
+          </div>
+          <div class="fact">
+            <dt>Dónde estamos</dt>
+            <dd id="fact-direccion">Av. Insurgentes Sur 1234, Col. Del Valle</dd>
+          </div>
+          <div class="fact">
+            <dt>Urgencias</dt>
+            <dd>Dolor agudo o diente fracturado: atendemos el mismo día</dd>
+          </div>
+        </dl>
+      </div>
+
+      <div class="cita" id="agendar">
+        <h2>Agendar cita</h2>
+        <p class="hint">Déjanos tus datos y confirmamos por WhatsApp en menos de 2 horas hábiles.</p>
+
+        <form id="form-cita" novalidate>
+          <div class="field">
+            <label for="nombre">Nombre completo</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" placeholder="Ana Martínez Soto" required>
+          </div>
+
+          <div class="field">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input id="telefono" name="telefono" type="tel" inputmode="tel" autocomplete="tel" placeholder="55 1234 5678" required>
+          </div>
+
+          <div class="field">
+            <label for="motivo">Motivo de la consulta</label>
+            <select id="motivo" name="motivo" required>
+              <option value="Valoración general">Valoración general — no sé qué necesito</option>
+              <option value="Limpieza dental">Limpieza dental (profilaxis)</option>
+              <option value="Resinas / caries">Resinas · caries</option>
+              <option value="Blanqueamiento">Blanqueamiento</option>
+              <option value="Ortodoncia">Ortodoncia · brackets o alineadores</option>
+              <option value="Endodoncia">Endodoncia (tratamiento de conducto)</option>
+              <option value="Implantes">Implantes y coronas</option>
+              <option value="Odontopediatría">Odontopediatría (niños)</option>
+              <option value="Urgencia por dolor">Urgencia — tengo dolor</option>
+            </select>
+          </div>
+
+          <div class="row-2">
+            <div class="field">
+              <label for="fecha">Día preferido</label>
+              <input id="fecha" name="fecha" type="date" required>
+            </div>
+            <div class="field">
+              <label for="horario">Horario</label>
+              <select id="horario" name="horario" required>
+                <option value="Mañana (9:00–13:00)">Mañana · 9–13 h</option>
+                <option value="Tarde (13:00–17:00)">Tarde · 13–17 h</option>
+                <option value="Noche (17:00–20:00)">Noche · 17–20 h</option>
+              </select>
+            </div>
+          </div>
+
+          <label class="consent">
+            <input id="aviso" name="aviso" type="checkbox" required>
+            <span>Acepto que usen mis datos únicamente para contactarme y agendar mi cita.</span>
+          </label>
+
+          <button class="btn btn-lg" type="submit">Solicitar mi cita</button>
+          <p class="status" id="estado" role="status" aria-live="polite" hidden></p>
+        </form>
+
+        <p class="alt">¿Prefieres hablar? Llámanos al <a id="tel-form" href="tel:+525512345678">55 1234 5678</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="tratamientos" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Tratamientos</p>
+      <h2 class="sec">Precios de referencia, publicados desde el principio.</h2>
+      <p>Lo que ves abajo es el punto de partida. El costo exacto se fija después de la revisión y no cambia a medio tratamiento.</p>
+    </div>
+
+    <div class="trats">
+      <article class="trat">
+        <h3>Limpieza dental</h3>
+        <p>Profilaxis con ultrasonido y pulido. Sesión de 45 minutos.</p>
+        <p class="price">desde <b>$700</b> MXN</p>
+      </article>
+      <article class="trat">
+        <h3>Resinas</h3>
+        <p>Restauración de caries con resina del color de tu diente.</p>
+        <p class="price">desde <b>$900</b> MXN</p>
+      </article>
+      <article class="trat">
+        <h3>Blanqueamiento</h3>
+        <p>En consultorio, tres aplicaciones en una sola visita.</p>
+        <p class="price">desde <b>$3,500</b> MXN</p>
+      </article>
+      <article class="trat">
+        <h3>Ortodoncia</h3>
+        <p>Brackets metálicos, estéticos o alineadores. Control cada 4 semanas.</p>
+        <p class="price">desde <b>$1,200</b> MXN / mes</p>
+      </article>
+      <article class="trat">
+        <h3>Endodoncia</h3>
+        <p>Tratamiento de conducto en una o dos sesiones, según el diente.</p>
+        <p class="price">desde <b>$2,800</b> MXN</p>
+      </article>
+      <article class="trat">
+        <h3>Implantes</h3>
+        <p>Implante de titanio y corona. Incluye tomografía de planeación.</p>
+        <p class="price">desde <b>$18,000</b> MXN</p>
+      </article>
+    </div>
+
+    <p class="nota">Manejamos pagos a meses sin intereses con tarjetas participantes y trabajamos con las principales aseguradoras de gastos médicos mayores. Pregúntanos por tu póliza al agendar.</p>
+  </section>
+
+  <section id="visita" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Tu primera visita</p>
+      <h2 class="sec">Tres pasos, en ese orden.</h2>
+    </div>
+    <div class="pasos">
+      <article class="paso">
+        <h3>Revisión y radiografía</h3>
+        <p>Exploración completa, radiografía panorámica digital y periodontograma si hace falta.</p>
+        <span class="dur">40 minutos</span>
+      </article>
+      <article class="paso">
+        <h3>Plan por escrito</h3>
+        <p>Te explicamos qué encontramos, qué es urgente y qué puede esperar. Con el presupuesto desglosado en papel.</p>
+        <span class="dur">15 minutos, misma visita</span>
+      </article>
+      <article class="paso">
+        <h3>Empezamos</h3>
+        <p>Si lo apruebas, agendamos las sesiones que necesites. Si quieres pensarlo, el presupuesto te lo llevas contigo.</p>
+        <span class="dur">Cuando tú decidas</span>
+      </article>
+    </div>
+  </section>
+
+  <div class="equipo-wrap">
+    <section id="equipo" class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Quiénes te atienden</p>
+        <h2 class="sec">Dos manos, el mismo consultorio, siempre.</h2>
+        <p>No rotamos pacientes entre practicantes: quien te revisa la primera vez es quien te trata.</p>
+      </div>
+      <div class="equipo">
+        <article class="persona">
+          <h3>Dra. Mariana Rojas</h3>
+          <p class="rol">Odontología general y estética</p>
+          <p>Egresada de la Facultad de Odontología de la UNAM, con posgrado en rehabilitación oral. Catorce años atendiendo en Del Valle.</p>
+          <span class="ced">Ced. Prof. 0000000 · dato de ejemplo</span>
+        </article>
+        <article class="persona">
+          <h3>Dr. Julián Ferrer</h3>
+          <p class="rol">Ortodoncia y odontopediatría</p>
+          <p>Especialista en ortodoncia por la UAM. Trabaja con brackets y alineadores, y es quien atiende a los pacientes más pequeños.</p>
+          <span class="ced">Ced. Esp. 0000000 · dato de ejemplo</span>
+        </article>
+      </div>
+    </section>
+  </div>
+
+  <section id="preguntas" class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow">Preguntas</p>
+      <h2 class="sec">Lo que casi siempre nos preguntan.</h2>
+    </div>
+    <div class="faq">
+      <details open>
+        <summary>¿La revisión inicial tiene costo?</summary>
+        <p>La valoración y el plan de tratamiento por escrito son sin costo. La radiografía panorámica cuesta $350 y se descuenta del primer tratamiento que hagas con nosotros.</p>
+      </details>
+      <details>
+        <summary>Me da miedo el dentista. ¿Qué hacen?</summary>
+        <p>Dínoslo al agendar y lo anotamos en tu expediente. Usamos anestesia tópica antes de la infiltración, vamos por pasos y paramos cuando levantes la mano. Para casos de ansiedad alta trabajamos con sedación consciente supervisada.</p>
+      </details>
+      <details>
+        <summary>¿Atienden niños?</summary>
+        <p>Sí, desde los 3 años con el Dr. Ferrer. La primera visita de un niño es solo de reconocimiento: se sube al sillón, conoce los instrumentos y no le hacemos nada.</p>
+      </details>
+      <details>
+        <summary>¿Puedo cancelar o mover mi cita?</summary>
+        <p>Sí, por WhatsApp y con 4 horas de anticipación, sin ningún cargo. Nos ayuda mucho porque liberamos ese espacio para alguien con dolor.</p>
+      </details>
+      <details>
+        <summary>¿Qué aceptan como forma de pago?</summary>
+        <p>Efectivo, transferencia, tarjetas de débito y crédito, y meses sin intereses a partir de $3,000 con tarjetas participantes.</p>
+      </details>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="foot-mark">Son<span class="dash"></span>risas</p>
+        <p id="foot-direccion">Av. Insurgentes Sur 1234, Col. Del Valle<br>Benito Juárez, 03100, CDMX</p>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <p>Lunes a viernes<br>9:00 – 20:00</p>
+        <p>Sábado<br>9:00 – 14:00</p>
+        <p>Domingo cerrado</p>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a id="tel-foot" href="tel:+525512345678">55 1234 5678</a>
+        <a id="mail-foot" href="mailto:hola@son-risas.mx">hola@son-risas.mx</a>
+        <a href="#agendar">Agendar cita</a>
+      </div>
+    </div>
+    <div class="demo-legal">
+      <h4>Aviso — sitio de demostración</h4>
+      <p>Este sitio es una <b>maqueta de diseño sin fines comerciales</b>. «Clínica Dental Son-risas» es un nombre inventado para el ejercicio y no corresponde a ningún establecimiento existente.</p>
+      <p>Los nombres de los profesionales, las cédulas profesionales, las especialidades, los precios, los horarios, el domicilio, los teléfonos y el correo que aparecen en la página son <b>ficticios</b>. Cualquier parecido con personas o establecimientos reales es coincidencia.</p>
+      <p>Nada de lo publicado aquí constituye oferta, publicidad ni prestación de servicios de salud, y no debe tomarse como información médica ni como base para decisión alguna. El formulario no envía datos a ningún servidor ni agenda ninguna cita.</p>
+    </div>
+
+    <div class="legal">
+      <span>© <span id="anio">2026</span> Son-risas — maqueta de diseño</span>
+      <span>Contenido ficticio · Sin relación con ningún consultorio real</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* =====================================================================
+     DATOS DE LA CLÍNICA — cambia solo estas líneas
+     ===================================================================== */
+  const CLINICA = {
+    demo:      true,                             // ponlo en false cuando cargues los datos reales
+    whatsapp:  "5215512345678",                 // lada país + número, solo dígitos
+    telefono:  "+525512345678",                 // para el enlace de llamada
+    telVisible:"55 1234 5678",
+    correo:    "hola@son-risas.mx",
+    direccion: "Av. Insurgentes Sur 1234, Col. Del Valle"
+  };
+  /* ===================================================================== */
+
+  // Aplica los datos de contacto a toda la página
+  (function aplicarDatos(){
+    for (const id of ["tel-top","tel-form","tel-foot"]) {
+      const el = document.getElementById(id);
+      if (el) {
+        el.textContent = CLINICA.telVisible;
+        // En demo el teléfono no marca, para no llamar al número de un desconocido.
+        if (CLINICA.demo) el.removeAttribute("href"); else el.href = "tel:" + CLINICA.telefono;
+      }
+    }
+    const mail = document.getElementById("mail-foot");
+    if (mail) { mail.href = "mailto:" + CLINICA.correo; mail.textContent = CLINICA.correo; }
+    document.getElementById("anio").textContent = new Date().getFullYear();
+  })();
+
+  const form   = document.getElementById("form-cita");
+  const fecha  = document.getElementById("fecha");
+  const estado = document.getElementById("estado");
+
+  // No se puede pedir cita en el pasado ni a más de 3 meses
+  const hoy = new Date();
+  const iso = d => new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+  fecha.min = iso(hoy);
+  const tope = new Date(hoy); tope.setMonth(tope.getMonth() + 3);
+  fecha.max = iso(tope);
+
+  function aviso(texto, kind){
+    estado.textContent = texto;
+    estado.dataset.kind = kind;
+    estado.hidden = false;
+  }
+
+  function fechaLarga(valor){
+    const [a, m, d] = valor.split("-").map(Number);
+    return new Date(a, m - 1, d).toLocaleDateString("es-MX", {
+      weekday: "long", day: "numeric", month: "long"
+    });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const nombre   = document.getElementById("nombre").value.trim();
+    const telefono = document.getElementById("telefono").value.trim();
+    const motivo   = document.getElementById("motivo").value;
+    const horario  = document.getElementById("horario").value;
+    const dia      = fecha.value;
+
+    if (!nombre)   { aviso("Escribe tu nombre para poder buscarte en la agenda.", "error"); document.getElementById("nombre").focus(); return; }
+    if (telefono.replace(/\D/g, "").length < 10) { aviso("Necesitamos 10 dígitos para confirmarte la cita.", "error"); document.getElementById("telefono").focus(); return; }
+    if (!dia)      { aviso("Elige el día que te queda mejor.", "error"); fecha.focus(); return; }
+
+    // El consultorio cierra domingo; el sábado solo abre por la mañana
+    const [a, m, d] = dia.split("-").map(Number);
+    const diaSemana = new Date(a, m - 1, d).getDay();
+    if (diaSemana === 0) { aviso("Los domingos cerramos. Elige otro día y con gusto te esperamos.", "error"); fecha.focus(); return; }
+    if (diaSemana === 6 && !horario.startsWith("Mañana")) {
+      aviso("Los sábados solo atendemos de 9:00 a 14:00. Cambia el horario a “Mañana” o elige otro día.", "error");
+      document.getElementById("horario").focus(); return;
+    }
+
+    if (!document.getElementById("aviso").checked) { aviso("Marca la casilla para que podamos contactarte.", "error"); return; }
+
+    const mensaje =
+      "Hola, quiero agendar una cita en Son-risas.\n\n" +
+      "Nombre: " + nombre + "\n" +
+      "Teléfono: " + telefono + "\n" +
+      "Motivo: " + motivo + "\n" +
+      "Día: " + fechaLarga(dia) + "\n" +
+      "Horario: " + horario;
+
+    // En modo demo no abrimos WhatsApp: el número de ejemplo podría ser de una persona real.
+    if (CLINICA.demo) {
+      aviso("Sitio de demostración: no se envió nada. Con los datos reales cargados, aquí se abriría WhatsApp con tu solicitud lista.", "ok");
+      return;
+    }
+
+    window.open("https://wa.me/" + CLINICA.whatsapp + "?text=" + encodeURIComponent(mensaje), "_blank", "noopener");
+    aviso("Abrimos WhatsApp con tu solicitud lista. Solo dale enviar y te confirmamos el horario.", "ok");
+  });
+</script>
+</body>
+</html>

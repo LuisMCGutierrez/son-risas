@@ -1,0 +1,13 @@
+# basura del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# dependencias
+node_modules/
+
+# vínculo local con el proyecto de Vercel (contiene los IDs de la cuenta)
+.vercel/
+
+# ajustes locales de Claude Code, propios de cada máquina
+.claude/settings.local.json
